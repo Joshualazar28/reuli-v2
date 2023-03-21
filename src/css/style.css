@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=fallback');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+/* Additional styles */
+@import 'additional-styles/utility-patterns.css';
+@import 'additional-styles/range-slider.css';
+@import 'additional-styles/toggle-switch.css';
+@import 'additional-styles/flatpickr.css';
+@import 'additional-styles/theme.css';
+
+@import 'tailwindcss/utilities';
+
+.active-page
+{
+    background-color: #6466f1 !important;
+    color: white !important;
+}
+.one_feed
+{
+  
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 44px; 
+    padding-left: 10px;  
+    color: #000000;
+}
+.price_card
+{
+    font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height, or 143% */
+
+text-align: right;
+
+color: black;
+}
+.feed_two
+{
+    font-style: normal;
+    font-weight: 400 !important;
+    font-size: 12px;
+    line-height: 12px;
+    /* identical to box height, or 100% */
+    
+    text-align: center;
+    
+    color: #FFFFFF;
+    background: #2973CC;
+    width: 50px !important;
+    height: 50px !important;
+
+    border-radius: 100%;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+.two_feed_text
+{
+    font-weight: 400 !important;
+font-size: 16px !important;
+line-height: 23px !important;
+/* identical to box height, or 192% */
+
+
+color: #898989 !important;
+
+}
+.price_card_two
+{
+    color: #898989 !important;
+    font-weight: 400 !important;
+font-size: 14px !important;
+line-height: 23px !important;
+}
+.order_textt
+{
+    font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 23px;
+/* identical to box height, or 192% */
+
+
+color: #000000;
+
+}
+.icn-arr{
+    position: relative;
+    left: 115px !important;
+}
+.pii{
+    background-image: url('../images/rec.png');
+    background-repeat: no-repeat;
+}
+.lab{
+    margin-left: 100px;
+}
+.lab1{
+    margin-left: 32px;
+}
+.lab2{
+    margin-left: 47px;
+}
+
+.btn-cd
+{
+    background:'#D9D9D9';
+    padding: 2px;
+}
+.btn-active
+{
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background: rgb(21, 197, 21);
+}
+.btn-bun
+{
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background: #D9D9D9;
+    border: 1px solid rgb(245, 237, 237);    
+}
+.nee{
+    background: #F6F6F6;
+}
+.valid{
+    background: #F6F6F6;
+}
+.mii{
+    width: 100px;
+    height: 90px;
+}
+.inn{
+    color: #F6F6F6 !important
+}
+.time-slot-days
+{
+    position: relative;
+    top: 14px;
+    left: 10px;
+
+}
+.time-slot-dayss
+{
+    position: relative;
+    top: 11px;
+    left: 140px;
+}
+.time-slot-times_text
+{
+    position: relative;
+    top: 11px;
+    left: 340px;
+}
+.time-slot-times
+{
+    position: relative;
+    top: 11px;
+    left: 340px;
+}
+.edit_rst-pro
+{
+    position: absolute;
+    background: #FBFBFB;
+    left: 86%;
+    top: 30px;
+}
+
+.neees
+{
+    width: 80% !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+.users_id_res
+{
+    margin-left: 92px !important;
+    margin-top: -44px !important;
+}
+.profile_pic_edit_btn
+{
+    position: absolute;
+   
+    left: 118px;
+   
+    margin-top: 41px;
+}
+
+.read-more-button
+{
+    color: #286DA8;
+}
+
+.ban-red
+{
+    background-color: red !important;
+}
