@@ -274,7 +274,8 @@ function OrdersTable({
                     restaurat={order.RestaurantName?order.RestaurantName:"not found"}
                     pay={order.PaymentMethod?order.PaymentMethod:"not found"}
                     datetime={order.OrderPlaceTime?order.OrderPlaceTime:"not found"}
-                    ItemSubTotal={order.TotalPrice?order.TotalPrice:"not found"}
+                    ItemSubTotal={order.ItemSubTotal?order.ItemSubTotal:"not found"}
+                    BasicDeliveryFee={order.BasicDeliveryFee?order.BasicDeliveryFee:"not found"}
                     ETATime={order?.ETATime}
                     OrderId={order?.OrderId?order?.OrderId:"not found"}
                     Scales={order?.Scales?order?.Scales:"not found"}

@@ -344,10 +344,12 @@ console.log(FoodReady, 'FoodReady')
                   </div>
                 </div>
               </div>
-
+            {acecptres?.ItemSubTotal > 0 ? <> 
               <div className="right col-span-6 order-1 sm:order-none sm:col-span-4 text-right sm:text-center lg:sidebar-expanded:col-span-6 xl:sidebar-expanded:col-span-4">
-                <div className="text-sm price_card">€{acecptres?.ItemSubTotalSUB}</div>
+                <div className="text-sm price_card">€{acecptres?.ItemSubTotal}</div>
               </div>
+            </> : null }
+            
             </div>
 
 
@@ -360,10 +362,12 @@ console.log(FoodReady, 'FoodReady')
                   </div>
                 </div>
               </div>
-
-              <div className="right col-span-6 order-1 sm:order-none sm:col-span-4 text-right sm:text-center lg:sidebar-expanded:col-span-6 xl:sidebar-expanded:col-span-4">
+                {acecptres?.BasicDeliveryFee > 0 ? <>
+                  <div className="right col-span-6 order-1 sm:order-none sm:col-span-4 text-right sm:text-center lg:sidebar-expanded:col-span-6 xl:sidebar-expanded:col-span-4">
               <div className="text-sm price_card">€{acecptres?.BasicDeliveryFee}</div>
               </div>
+                </> : null}
+            
             </div>
             <div className="grid grid-cols-12 items-center gap-x-2">
               {/* Card */}
@@ -374,10 +378,13 @@ console.log(FoodReady, 'FoodReady')
                   </div>
                 </div>
               </div>
-
-              <div className="right col-span-6 order-1 sm:order-none sm:col-span-4 text-right sm:text-center lg:sidebar-expanded:col-span-6 xl:sidebar-expanded:col-span-4">
+                
+                {acecptres?.ExtraKMDeliveryFee > 0 ? <>
+                  <div className="right col-span-6 order-1 sm:order-none sm:col-span-4 text-right sm:text-center lg:sidebar-expanded:col-span-6 xl:sidebar-expanded:col-span-4">
               <div className="text-sm price_card">€{acecptres?.ExtraKMDeliveryFee}</div>
               </div>
+                </> :null}
+            
             </div>
 
  
@@ -986,21 +993,24 @@ console.log(FoodReady, 'FoodReady')
               </Link>
             </li>
           </EditMenu> */}
-                      <svg xmlns="http://www.w3.org/2000/svg"  style={{position:"relative", left:"40px !important"}}  class="icn-arr icon  icon-tabler icon-tabler-arrow-bar-to-down" width="44" height="44" marginLeft="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+                     
+     {/* <button align="right" className="btn bg-indigo-500 hover:bg-indigo-600 text-white">{datasend?.ETATime}</button> */}
+     <button align="right" className="btn bg-indigo-500 hover:bg-indigo-600 text-white">{datasend?.ETATime}</button>
+
+     <button align="right" className="btn bg-indigo-500 hover:bg-indigo-600 text-white">Edit</button>
+     {/* <button align="right" className="btn bg-indigo-500 hover:bg-indigo-600 text-white">{datasend?.ETATime}</button> */}
+
+        </header>
+        <div >
+          <svg xmlns="http://www.w3.org/2000/svg"    class="icn-arr icon  icon-tabler icon-tabler-arrow-bar-to-down" width="44" height="44" marginLeft="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <line x1="4" y1="20" x2="20" y2="20" />
   <line x1="12" y1="14" x2="12" y2="4" />
   <line x1="12" y1="14" x2="16" y2="10" />
   <line x1="12" y1="14" x2="8" y2="10" />
        </svg>
-     {/* <button align="right" className="btn bg-indigo-500 hover:bg-indigo-600 text-white">{datasend?.ETATime}</button> */}
-     <button align="right" className="btn bg-indigo-500 hover:bg-indigo-600 text-white">{datasend?.ETATime}</button>
-
-     <button align="right" className="btn bg-indigo-500 hover:bg-indigo-600 text-white">{datasend?.ETATime}</button>
-     {/* <button align="right" className="btn bg-indigo-500 hover:bg-indigo-600 text-white">{datasend?.ETATime}</button> */}
-
-        </header>
-        
+          </div>
         {/* Body */}
         {/* {datasend?Scales.map((scale) => { */}
           {/* return (  */}
@@ -1137,9 +1147,12 @@ console.log(FoodReady, 'FoodReady')
                 </div>
               </div>
 
-              <div className="right col-span-6 order-1 sm:order-none sm:col-span-4 text-right sm:text-center lg:sidebar-expanded:col-span-6 xl:sidebar-expanded:col-span-4">
-                <div className="text-sm price_card">€{datasend?.ItemSubTotalSUB}</div>
+              {datasend?.ItemSubTotal > 0 ? <>
+                <div className="right col-span-6 order-1 sm:order-none sm:col-span-4 text-right sm:text-center lg:sidebar-expanded:col-span-6 xl:sidebar-expanded:col-span-4">
+                <div className="text-sm price_card">€{datasend?.ItemSubTotal}</div>
               </div>
+               </> : null }
+             
             </div>
 
 
@@ -1152,10 +1165,12 @@ console.log(FoodReady, 'FoodReady')
                   </div>
                 </div>
               </div>
-
-              <div className="right col-span-6 order-1 sm:order-none sm:col-span-4 text-right sm:text-center lg:sidebar-expanded:col-span-6 xl:sidebar-expanded:col-span-4">
+              {datasend?.BasicDeliveryFee > 0 ? <>
+                <div className="right col-span-6 order-1 sm:order-none sm:col-span-4 text-right sm:text-center lg:sidebar-expanded:col-span-6 xl:sidebar-expanded:col-span-4">
               <div className="text-sm price_card">€{datasend?.BasicDeliveryFee}</div>
               </div>
+               </> : null }
+           
             </div>
             <div className="grid grid-cols-12 items-center gap-x-2">
               {/* Card */}
@@ -1166,10 +1181,12 @@ console.log(FoodReady, 'FoodReady')
                   </div>
                 </div>
               </div>
-
-              <div className="right col-span-6 order-1 sm:order-none sm:col-span-4 text-right sm:text-center lg:sidebar-expanded:col-span-6 xl:sidebar-expanded:col-span-4">
+                {datasend?.ExtraKMDeliveryFee > 0 ? <>
+                  <div className="right col-span-6 order-1 sm:order-none sm:col-span-4 text-right sm:text-center lg:sidebar-expanded:col-span-6 xl:sidebar-expanded:col-span-4">
               <div className="text-sm price_card">€{datasend?.ExtraKMDeliveryFee}</div>
               </div>
+                </> : null }
+             
             </div>
 
  

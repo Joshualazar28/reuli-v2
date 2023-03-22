@@ -46,8 +46,8 @@ function AcceptRestaurant() {
     setSelectedItems([...selectedItems]);
   };
 
-  const  title = "Orders Create"
-  const CreateOrderCount  = '76'
+  const  title = "Accept Restaurant"
+  const CreateOrderCount  = AcceptResturantCount
 
   return (
     <div className="flex h-screen overflow-hidden">

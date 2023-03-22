@@ -209,7 +209,7 @@ function OrdersTable({
                   <div className="font-semibold text-left">Order ID</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                  <div className="font-semibold text-left">Customer/</div>
+                  <div className="font-semibold text-left">Customer</div>
                 </th>
                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
                   <div className="font-semibold text-left">Area </div>

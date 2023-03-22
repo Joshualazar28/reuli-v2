@@ -58,7 +58,7 @@ function Received() {
     setSelectedItems([...selectedItems]);
   };
 
-  const title = "Orders Create"
+  const title = "New Order"
   const CreateOrderCount = RecievedDataCOUNT
 
 
@@ -97,7 +97,7 @@ function Received() {
               </div>
 
             </div>
-            Received Orders
+          
 
            
             {/* Table */}

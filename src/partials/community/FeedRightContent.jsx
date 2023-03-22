@@ -240,7 +240,7 @@ console.log(acecptres, 'acecptres amen')
                       </a>
                     </div>
                     <div className="text-xs text-slate-500">
-                      {datasend?.FullName}
+                      {datasend?.customer}
                     </div>
                   </li>
                   <li>
@@ -249,7 +249,7 @@ console.log(acecptres, 'acecptres amen')
                         Restaurant
                       </a>
                     </div>
-                    <div className="text-xs text-slate-500">   {datasend?.RestaurantName}</div>
+                    <div className="text-xs text-slate-500">   {datasend?.restaurat}</div>
                   </li>
                   <li>
                     <div className="text-sm mb-1">
