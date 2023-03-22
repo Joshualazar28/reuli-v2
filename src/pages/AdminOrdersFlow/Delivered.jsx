@@ -50,8 +50,8 @@ function Received() {
     setSelectedItems([...selectedItems]);
   };
 
-  const  title = "Orders Create"
-  const CreateOrderCount  = '76'
+  const  title = "working......................."
+  const CreateOrderCount  = ''
 
   return (
     <div className="flex h-screen overflow-hidden">

@@ -281,6 +281,8 @@ function OrdersTable({
                   datetime={order.OrderPlaceTime?order.OrderPlaceTime:"not found"}
                   ItemSubTotal={order.ItemSubTotal?order.ItemSubTotal:"not found"}
                   DriverName={order.DriverName?order.DriverName:"not found"}
+                  TotalPrice={order.TotalPrice?order.TotalPrice:"not found"}
+               
                     // key={order.id}
                     // id={order.id}
                     // // image={order.image}

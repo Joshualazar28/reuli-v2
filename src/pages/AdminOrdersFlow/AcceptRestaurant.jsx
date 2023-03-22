@@ -84,7 +84,7 @@ function AcceptRestaurant() {
               </div>
 
             </div>
-           Accept Restaurant
+
             {/* Table */}
             {loading? <><OrdersTable  AcceptResturant={AcceptResturant}  selectedItems={handleSelectedItems} title={title} CreateOrderCount={CreateOrderCount} /></> :<><Spinner animation="border" /></>} 
               

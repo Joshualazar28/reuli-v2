@@ -88,7 +88,7 @@ function FoodReady() {
               </div>
 
             </div>  
-           Food Ready
+
             {/* Table */}
             {loading ? <> <OrdersTable food={food} selectedItems={handleSelectedItems} title={title} CreateOrderCount={CreateOrderCount} /> </> : <> <Spinner animation="border" /> </>}
            

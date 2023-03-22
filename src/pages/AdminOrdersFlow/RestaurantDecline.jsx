@@ -47,8 +47,8 @@ function RestaurantDecline() {
     setSelectedItems([...selectedItems]);
   };
 
-  const  title = "Orders Create"
-  const CreateOrderCount  = '76'
+  const  title = "Orders decline"
+  const CreateOrderCount  = ResturantDeclineCOUNT
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -85,7 +85,7 @@ function RestaurantDecline() {
               </div>
 
             </div>
-            Received Orders Decline
+            
             {/* Table */}
             <OrdersTable  ResturantDecline={ResturantDecline} selectedItems={handleSelectedItems} title={title} CreateOrderCount={CreateOrderCount} />
 

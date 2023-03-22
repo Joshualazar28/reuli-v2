@@ -97,10 +97,10 @@ function OrdersTableItem(props) {
           <div className="text-left font-medium text-emerald-500">{moment(props.datetime).format('MMMM Do YYYY')}</div>
         </td>
         <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-          <div className="text-center">{props.ItemSubTotal}</div>
+          <div className="text-center">€ {props.TotalPrice}</div>
         </td>
         <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-          <div className="text-center">{props.ItemSubTotal}</div>
+          <div className="text-center">{props.DriverName}</div>
         </td>
         {/* <td className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
           <div className="text-center">{props.customer}</div>

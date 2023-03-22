@@ -7,27 +7,38 @@ import PaginationNumeric from '../../components/PaginationNumeric';
 import Datepicker from '../../components/Datepicker';
 import DateSelect from '../../components/DateSelect';
 import OrdersTable from '../../partials/AllTablesFlow/AdminOrdersFlowTables/ScheduledOrder/OrdersTable';
-
+import ReactPaginate from 'react-paginate';
 function Received() {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
   const [ScheduleData, setSechduleData] = useState([]);
+  const [ScheduleDataCount, setSechduleDataCount] = useState();
+  const [page, setPage] = useState(0)
+  const [loading, setloading] = useState(false)
+  const pageDivTen = ScheduleDataCount / 10 // divied page in to 10
+  const showCount = pageDivTen.toFixed() // remove the . value 
+
+  const handlePageClick = (data) => {
+   
+    setPage(data.selected)
+  }
+
   useEffect(() => {
-    axios.get(`https://delivigo-api.herokuapp.com/api/v5/dashboard/orders/admin?pageNo=1&status=10`)
+    axios.get(`https://delivigo-api.herokuapp.com/api/v5/dashboard/orders/admin?pageNo=${page + 1}&status=10`)
       .then(response => {
         setSechduleData(response.data.result)
-        // setCreateCOUNT(response.data.Count)
+        setSechduleDataCount(response.data.Count)
       })
       .catch(error => console.log(error));
-  }, []);
+  }, [page]);
   console.log(ScheduleData , "ScheduleData works");
   const handleSelectedItems = (selectedItems) => {
     setSelectedItems([...selectedItems]);
   };
 
-  const  title = "Orders Create"
-  const CreateOrderCount  = '76'
+  const  title = "Orders Scheduled"
+  const CreateOrderCount  = ScheduleDataCount
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -71,7 +82,26 @@ function Received() {
 
             {/* Pagination */}
             <div className="mt-8">
-              <PaginationNumeric />
+            <ReactPaginate
+                containerClassName='inline-flex text-sm font-medium -space-x-px shadow-sm'
+                pageClassName='inline-flex items-center justify-center rounded-l leading-5 px-3.5 py-2 bg-white border border-slate-200 text-indigo-500'
+                pageLinkClassName=''
+              breakClassName='page-item'
+              previousClassName='page-item'
+              previousLinkClassName='page-link'
+              nextClassName='page-item'
+                breakLabel="..."
+                nextLabel="next"
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={5}
+                pageCount={showCount}
+                previousLabel="previous"
+             renderOnZeroPageCount={null}
+                nextLinkClassName='page-link'
+                breakLinkClassName='page-link'
+                activeClassName='active-page'
+               
+              />
             </div>
 
           </div>

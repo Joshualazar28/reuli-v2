@@ -26,7 +26,7 @@ console.log('re')
 
   console.log(page + 1, 'page......')
   useEffect(() => {
-    axios.get(`https://delivigo-api.herokuapp.com/api/v5/dashboard/orders/admin?pageNo=1&status=55`)
+    axios.get(`https://delivigo-api.herokuapp.com/api/v6/dashboard/orders/admin?pageNo=${page + 1}&status=55`)
       .then(response => {
         setInDelivery(response.data.result)
         setInDeliveryCount(response.data.Count)
