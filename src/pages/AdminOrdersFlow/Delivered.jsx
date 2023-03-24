@@ -27,7 +27,7 @@ function Received() {
 
 
   useEffect(() => {
-    axios.get(`https://delivigo-api.herokuapp.com/api/v5/dashboard/orders/admin?pageNo=1&status=80`)
+    axios.get(`https://delivigo-api.herokuapp.com/api/v6/dashboard/orders/admin?pageNo=1&status=80`)
       .then(response => {
         setDelivered80(response.data.result)
         // setRecievedDataCOUNT(response.data.Count)

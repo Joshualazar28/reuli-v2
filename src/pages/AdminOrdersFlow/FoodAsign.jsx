@@ -16,7 +16,7 @@ function FoodAsign() {
   const [selectedItems, setSelectedItems] = useState([]);
   const [FoodAsign, setFoodAsign] = useState([]);
   useEffect(() => {
-    axios.get(`https://delivigo-api.herokuapp.com/api/v5/dashboard/orders/admin?pageNo=1&status=10`)
+    axios.get(`https://delivigo-api.herokuapp.com/api/v6/dashboard/orders/admin?pageNo=1&status=10`)
       .then(response => {
         setFoodAsign(response.data.result)
         // setCreateCOUNT(response.data.Count)

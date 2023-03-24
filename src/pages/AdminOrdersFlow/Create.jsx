@@ -27,13 +27,13 @@ function Create() {
   
 
   useEffect(() => {
-    console.log(`https://delivigo-api.herokuapp.com/api/v5/dashboard/orders/admin?pageNo=${page + 1}&status=10`, 'before')
-    axios.get(`https://delivigo-api.herokuapp.com/api/v5/dashboard/orders/admin?pageNo=${page + 1}&status=10`)
+  
+    axios.get(`https://delivigo-api.herokuapp.com/api/v6/dashboard/orders/admin?pageNo=${page + 1}&status=10`)
       .then(response => {
         console.log(response.data.result,'response.data.result')
         setCreate(response.data.result)
         setCreateCOUNT(response.data.Count)
-        console.log(`https://delivigo-api.herokuapp.com/api/v5/dashboard/orders/admin?pageNo=${page + 1}&status=10`, 'after')
+       
         setloading(true)
       })
       .catch(error => console.log(error));
