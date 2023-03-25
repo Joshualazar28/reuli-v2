@@ -102,7 +102,7 @@ function AcceptRestaurant() {
                 nextLabel="next"
                 onPageChange={handlePageClick}
                 pageRangeDisplayed={5}
-                pageCount={showCount}
+                pageCount={showCount > 0 ? showCount: 1}
                 previousLabel="previous"
              renderOnZeroPageCount={null}
                 nextLinkClassName='page-link'
