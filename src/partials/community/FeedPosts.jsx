@@ -28,7 +28,7 @@ console.log(FoodReady, 'FoodReady')
 
   const [open, setOpen] = useState(false);
 
-  console.log('uhi')
+  console.log('uhi  amen')
 
   const [show, setShow] = useState(false);
   const [allRestaurant, setallRestaurant] = useState([])
