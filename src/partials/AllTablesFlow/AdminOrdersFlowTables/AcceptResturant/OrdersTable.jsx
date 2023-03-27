@@ -284,6 +284,12 @@ function OrdersTable({
                   AddressLine={order.AddressLine?order.AddressLine:"not found"}
                   // restaurat={order.RestaurantName}
                   // image={order.image}
+
+
+                  CreatedDate={order?.CreatedDate?order.CreatedDate:"not found"}
+                  OrderPlaceTime={order.OrderPlaceTime?orders.OrderPlaceTime:"not found"}
+                  OrderAcceptTime={order?.OrderAcceptTime?orders.OrderAcceptTime:"not found"}
+
                   restaurat={order.RestaurantName?order.RestaurantName:"not found"}
                   pay={order.PaymentMethod?order.PaymentMethod:"not found"}
                   datetime={order.OrderAcceptTime?order.OrderAcceptTime:"not found"}

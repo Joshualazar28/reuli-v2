@@ -7,7 +7,7 @@ import {
 } from "@material-tailwind/react";
 import ModalBasic from '../../components/ModalBasic';
 import axios  from 'axios';
-
+import moment from 'moment';
 import { Link } from "react-router-dom";
 // import EditMenu from "../../components/DropdownEditMenu";
 
@@ -28,6 +28,7 @@ console.log(FoodReady, 'FoodReady')
 
   const [open, setOpen] = useState(false);
 
+  console.log('uhi  amen')
 
   const [show, setShow] = useState(false);
   const [allRestaurant, setallRestaurant] = useState([])
@@ -175,7 +176,7 @@ console.log(FoodReady, 'FoodReady')
             <div>
               <div className="leading-tight">
                 <a className="text-lg font-semibold text-slate-800" href="#0">
-                  {FoodReady?.RestaurantName?FoodReady?.RestaurantName:"not found"} 
+                  {acecptres?.RestaurantName?acecptres?.RestaurantName:"not found"} 
                 </a>
               </div>
               <div className="text-xs text-slate-500"></div>
@@ -433,7 +434,7 @@ console.log(FoodReady, 'FoodReady')
                       </span>
                      
                       <span className="one_feed text-sm" style={{position:"relative", top:"-5px", fontSize:"14px"}}>
-                      Order received
+                      Order Create
                       </span>
                     </div>
 
@@ -442,7 +443,7 @@ console.log(FoodReady, 'FoodReady')
                      
                      
                       <span className="one_feed text-sm" style={{position:"relative", top:"-5px", fontSize:"14px",left:"20px"}}>
-                      02/11/2021 11:03 PM
+                      {moment(acecptres?.CreatedDate).format('MMMM Do YYYY')}
                       </span>
                     </div>
 {/* /////////////////////////////////////////// */}
@@ -462,7 +463,7 @@ console.log(FoodReady, 'FoodReady')
                      
                      
                       <span className="one_feed text-sm" style={{position:"relative", top:"-5px", fontSize:"14px"}}>
-                      02/11/2021 11:03 PM
+                      {moment(acecptres?.OrderPlaceTime).format('MMMM Do YYYY')}
                       </span>
                     </div>
                     {/* /////////////////////////// */}
@@ -483,7 +484,7 @@ console.log(FoodReady, 'FoodReady')
                      
                      
                       <span className="one_feed text-sm" style={{position:"relative", top:"-5px", fontSize:"14px",left:"20px"}}>
-                      02/11/2021 11:03 PM | by jack
+                      {moment(acecptres?.OrderAcceptTime).format('MMMM Do YYYY')}
                       </span>
                     </div> 
 
@@ -503,37 +504,13 @@ console.log(FoodReady, 'FoodReady')
                       {" "}
                      
                      
-                      <span className="one_feed text-sm" style={{position:"relative", top:"-5px", fontSize:"14px",left:"20px"}}>
-                      5 mints add on standard time
-                      </span>
+                    
                     </div>
                   {/* ..../././/./././././.. */}
 
-                  <div className="text-sm font-medium text-slate-800 one_feed" style={{marginTop:'-27px',marginLeft:'-10px'}}>
-                      {" "}
-                      <span className="inline-flex items-center justify-center h-5 text-xs font-medium text-black bg-indigo-500 px-2" style={{borderRadius:"100%", width:"20px", height:"20px"}}>
-                      
-                      </span>
-                     
-                      <span className="one_feed text-sm" style={{position:"relative", top:"-5px",lineHeight:"10px", fontSize:"14px"}}>
-                      Foody Ready
-                      </span>
-                    </div>  
 
-                    <div className="text-sm font-medium text-slate-800 one_feed'" style={{position:"relative", top:"-15px"}}>
-                      {" "}
-                      <span className="one_feed text-sm" style={{position:"relative", top:"-5px", fontSize:"14px",left:"20px"}}>
-                      02/11/2021 11:03 PM
-                      </span>
-                    </div>
 
-                    <div className=' absolute w-11/12 -mt-20 flex justify-end '>
-                          <div className='border-2 border-gray-300 w-44 rounded-xl'>
-                            <div className='w-10 h-10 ml-1 mt-1 pii'></div>
-                            <h3 className='ml-10 -mt-10 text-blue-400'>Bilal Ahmed</h3>
-                            <h3 className='ml-10'>0333 7883892</h3>
-                          </div>
-                    </div>
+
                   </div>
                 </div>
       </div>
@@ -546,7 +523,7 @@ console.log(FoodReady, 'FoodReady')
           </PopoverHandler>
           <PopoverContent>
             <button 
-             onClick={(e) => { e.stopPropagation(); setFeedbackModalOpen(true); }}
+            //  onClick={(e) => { e.stopPropagation(); setFeedbackModalOpen(true); }}
             // onClick={() => setOpen(true)}
               className='mr-5'>Food Ready</button>
           </PopoverContent>
@@ -835,7 +812,8 @@ console.log(FoodReady, 'FoodReady')
                      
                      
                       <span className="one_feed text-sm" style={{position:"relative", top:"-5px", fontSize:"14px",left:"20px"}}>
-                      02/11/2021 11:03 PM
+                 
+                    {moment(FoodReady?.CreatedDate).format('MMMM Do YYYY')}
                       </span>
                     </div>
 {/* /////////////////////////////////////////// */}
@@ -1246,98 +1224,13 @@ console.log(FoodReady, 'FoodReady')
                      
                      
                       <span className="one_feed text-sm" style={{position:"relative", top:"-5px", fontSize:"14px",left:"20px"}}>
-                      02/11/2021 11:03 PM
-                      </span>
-                    </div>
-{/* /////////////////////////////////////////// */}
-                    <div className="text-sm font-medium text-slate-800 one_feed" style={{marginTop:'-27px',marginLeft:'-10px'}}>
-                      {" "}
-                      <span className="inline-flex items-center justify-center h-5 text-xs font-medium text-black bg-indigo-500 px-2" style={{borderRadius:"100%", width:"20px", height:"20px"}}>
-                      
-                      </span>
                      
-                      <span className="one_feed text-sm" style={{position:"relative", top:"-5px",lineHeight:"10px", fontSize:"14px"}}>
-                      Order received
+                     {moment(datasend?.OrderPlaceTime).format('MMMM Do YYYY')}
                       </span>
                     </div>
 
-                    <div className="text-sm font-medium text-slate-800 one_feed'" style={{position:"relative", top:"-15px",left:"20px"}}>
-                      {" "}
-                     
-                     
-                      <span className="one_feed text-sm" style={{position:"relative", top:"-5px", fontSize:"14px"}}>
-                      02/11/2021 11:03 PM
-                      </span>
-                    </div>
-                    {/* /////////////////////////// */}
 
-                    <div className="text-sm font-medium text-slate-800 one_feed" style={{marginTop:'-27px',marginLeft:'-10px'}}>
-                      {" "}
-                      <span className="inline-flex items-center justify-center h-5 text-xs font-medium text-black bg-indigo-500 px-2" style={{borderRadius:"100%", width:"20px", height:"20px"}}>
-                      
-                      </span>
-                     
-                      <span className="one_feed text-sm" style={{position:"relative", top:"-5px",lineHeight:"10px", fontSize:"14px"}}>
-                      Restaurant Accept order
-                      </span>
-                    </div>
 
-                    <div className="text-sm font-medium text-slate-800 one_feed'" style={{position:"relative", top:"-15px"}}>
-                      {" "}
-                     
-                     
-                      <span className="one_feed text-sm" style={{position:"relative", top:"-5px", fontSize:"14px",left:"20px"}}>
-                      02/11/2021 11:03 PM | by jack
-                      </span>
-                    </div> 
-
-                    {/* ......././/.././././././././/./././ */}
-                    <div className="text-sm font-medium text-slate-800 one_feed" style={{marginTop:'-27px',marginLeft:'-10px'}}>
-                      {" "}
-                      <span className="inline-flex items-center justify-center h-5 text-xs font-medium text-black bg-indigo-500 px-2" style={{borderRadius:"100%", width:"20px", height:"20px"}}>
-                      
-                      </span>
-                     
-                      <span className="one_feed text-sm" style={{position:"relative", top:"-5px",lineHeight:"10px", fontSize:"14px"}}>
-                      Restaurant Add time
-                      </span>
-                    </div>
-
-                    <div className="text-sm font-medium text-slate-800 one_feed'" style={{position:"relative", top:"-15px"}}>
-                      {" "}
-                     
-                     
-                      <span className="one_feed text-sm" style={{position:"relative", top:"-5px", fontSize:"14px",left:"20px"}}>
-                      5 mints add on standard time
-                      </span>
-                    </div>
-                  {/* ..../././/./././././.. */}
-
-                  <div className="text-sm font-medium text-slate-800 one_feed" style={{marginTop:'-27px',marginLeft:'-10px'}}>
-                      {" "}
-                      <span className="inline-flex items-center justify-center h-5 text-xs font-medium text-black bg-indigo-500 px-2" style={{borderRadius:"100%", width:"20px", height:"20px"}}>
-                      
-                      </span>
-                     
-                      <span className="one_feed text-sm" style={{position:"relative", top:"-5px",lineHeight:"10px", fontSize:"14px"}}>
-                      Foody Ready
-                      </span>
-                    </div>  
-
-                    <div className="text-sm font-medium text-slate-800 one_feed'" style={{position:"relative", top:"-15px"}}>
-                      {" "}
-                      <span className="one_feed text-sm" style={{position:"relative", top:"-5px", fontSize:"14px",left:"20px"}}>
-                      02/11/2021 11:03 PM
-                      </span>
-                    </div>
-
-                    <div className=' absolute w-11/12 -mt-20 flex justify-end '>
-                          <div className='border-2 border-gray-300 w-44 rounded-xl'>
-                            <div className='w-10 h-10 ml-1 mt-1 pii'></div>
-                            <h3 className='ml-10 -mt-10 text-blue-400'>Bilal Ahmed</h3>
-                            <h3 className='ml-10'>0333 7883892</h3>
-                          </div>
-                    </div>
                   </div>
                 </div>
       </div>
