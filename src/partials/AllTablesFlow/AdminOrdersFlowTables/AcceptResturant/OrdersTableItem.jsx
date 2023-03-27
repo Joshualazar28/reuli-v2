@@ -75,7 +75,8 @@ function OrdersTableItem(props) {
             min={20}
             ideal={40}
             max={40}
-            readMoreText={"read more"}/> </div>
+            readMoreText={"read more"}/> 
+            </div>
           </div>
         </td>
 

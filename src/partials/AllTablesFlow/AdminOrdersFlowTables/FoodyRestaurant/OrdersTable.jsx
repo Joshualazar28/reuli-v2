@@ -296,7 +296,13 @@ function OrdersTable({
                     ItemSubTotalSUB={order?.ItemSubTotal}
                     TotalPrice={order?.TotalPrice}
                     OrderDeliveredTime={order?.OrderDeliveredTime?order?.OrderDeliveredTime:"not available"}
-                    // type={order.type}
+                   
+                    CreatedDate={order?.CreatedDate?order.CreatedDate:"not found"}
+                  OrderPlaceTime={order.OrderPlaceTime?orders.OrderPlaceTime:"not found"}
+                  OrderAcceptTime={order?.OrderAcceptTime?orders.OrderAcceptTime:"not found"}
+                  OrderCompleteTime={order?.OrderCompleteTime?orders.OrderCompleteTime:"not found"}
+                  
+                  // type={order.type}
                     // description={order.description}
                     // handleClick={handleClick}
                     // isChecked={isCheck.includes(order.id)}
