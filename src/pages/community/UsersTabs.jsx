@@ -16,7 +16,7 @@ import Image09 from '../../images/users.png';
 import Image10 from '../../images/users.png';
 import Image11 from '../../images/users.png';
 import Image12 from '../../images/users.png';
-function UsersTabs() {
+function UsersTabs({allRider}) {
   const items = [
     {
       id: 0,
@@ -93,7 +93,7 @@ function UsersTabs() {
           <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
             <div className="grid grid-cols-12 gap-6">
               {
-                items.map(item => {
+                allRider.map(item => {
                   console.log(item, 'item')
                   return (
                     <div className="col-span-full  sm:col-span-6 xl:col-span-3 bg-white shadow-lg rounded-xl border border-slate-200">
@@ -102,8 +102,8 @@ function UsersTabs() {
                   <UsersTabsCard
                       key={item.id}
                       id={item.id}
-                      name={item.name}
-                      image={item.image}
+                      name={item.FullName}
+                      image={item.ImageUrl}
                       link={item.link}
                       location={item.location}
                       content={item.content}

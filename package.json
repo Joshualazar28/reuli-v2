@@ -28,8 +28,9 @@
     "react-moment": "^1.1.2",
     "react-paginate": "^8.1.4",
     "react-router-dom": "^6.3.0",
+    "react-switch": "^7.0.0",
     "react-time-picker": "^5.1.0",
-    "react-toastify": "^9.1.1",
+    "react-toastify": "^9.1.2",
     "react-transition-group": "^4.4.2",
     "read-more-react": "^1.0.10",
     "yarn": "^1.22.19"

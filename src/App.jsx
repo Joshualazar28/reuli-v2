@@ -116,6 +116,7 @@ import Reviews from './components/Reviews';
 // Restaurant
 import AllRestaurant from './pages/AllRestaurant/AllRestaurant'
 import AllRestaurantDetail from './pages/AllRestaurant/AllRestaurantDetail'
+import ResturantDetailsMenu from './pages/AllRestaurant/Menu_details'
 
 // Meal  Category
 
@@ -144,19 +145,19 @@ function App() {
   const store = Store()
   console.log(store, "joshua-Store")
 console.log(state,'app data admin')
-  useEffect(() => {
-    const admin = JSON.parse(localStorage.getItem('admin'));
-    console.log(admin,  'admin...')
-    if(!admin)
-    {
-    navigation('/signin')
-    }
-    else
-    {
-      navigation('/')
-    }
+  // useEffect(() => {
+  //   const admin = JSON.parse(localStorage.getItem('admin'));
+  //   console.log(admin,  'admin...')
+  //   if(!admin)
+  //   {
+  //   navigation('/signin')
+  //   }
+  //   else
+  //   {
+  //     navigation('/')
+  //   }
 
-  }, [])
+  // }, [])
 
   useEffect(() => {
     document.querySelector('html').style.scrollBehavior = 'auto'
@@ -222,6 +223,7 @@ console.log(state,'app data admin')
         {/* Restaurant */}
         <Route path='/all/rest' element={<AllRestaurant/>}/>
         <Route path='/all/rest/:id' element={<AllRestaurantDetail/>}/>
+        <Route path='/restaurant/:id/menu/:id' element={<ResturantDetailsMenu/>}/>
         <Route path='/restaurant/profile' element={<RestaurantProfile/>}/>
         <Route path='/restaurant/order' element={<RestaurantOrder/>}/>
         <Route path='/restaurant/button' element={<RestaurantButton/>}/>
