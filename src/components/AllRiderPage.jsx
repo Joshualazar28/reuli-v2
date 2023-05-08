@@ -1,9 +1,9 @@
 import React from 'react'
 import Pay from '../pages/ecommerce/Pay'
 import UsersTabs from '../pages/community/UsersTabs'
-function AllRiderPage() {
+function AllRiderPage({allRider}) {
   return (
-   <UsersTabs/>
+   <UsersTabs allRider={allRider}/>
   )
 }
 

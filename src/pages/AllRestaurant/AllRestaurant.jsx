@@ -12,6 +12,8 @@ import RidersTable from '../../partials/RideTable/Approved/OrdersTable';
 import RiderTable from '../../partials/Rider/Approved/OrdersTable';
 import AllRiderPage from '../../components/AllRiderPage';
 import AllRestaurantCard from './AllRestaurantCard';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function CancelOrders() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -27,11 +29,14 @@ function CancelOrders() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   console.log(show, 'sjow')
-  useEffect(() => {
+  const GetAllRest = () => {
     const allRestaurant = axios.get("https://delivigo-api.herokuapp.com/api/v5/restaurants")
-      .then(function (response) {
-        setallRestaurant(response?.data?.result, 'allRestaurant');
-      });
+    .then(function (response) {
+      setallRestaurant(response?.data?.result, 'allRestaurant');
+    });
+  }
+  useEffect(() => {
+    GetAllRest()
   }, [])
 
 
@@ -91,32 +96,81 @@ function CancelOrders() {
       },
       body: JSON.stringify({
 
-
-        Name: Name,
-        Email:Email,
-        Password:Password,
-        PhoneNumber: PhoneNumber,
-        // CompanyPer: CompanyPer,
-        CompanyPer:CompanyPer ,
-        TagLine: TagLine,
-        ApproximateCostPerPerson: ApproximateCostPerPerson,
-        CountryId: "1",
-        CityId: "1",
-      
-        BusinessId:BusinessId,
-        RestaurantTagId: [
+        "Name": "reilu res",
+        "Email": "amenamen5@reilu.com",
+        "Password": "aaaaaa",
+        "PhoneNumber": "+3234234",
+        "CompanyPer": "10",
+        "TagLine": "ass",
+        "ApproximateCostPerPerson": "€",
+        "CountryId": "1",
+        "CityId": "1",
+        "BusinessType": "restaurant",
+        "BusinessId":"ksakw323",
+        "RestaurantTagId": [
             "1",
             "3"
         ],
-        RestaurantTypeId: [
+      
+        "RestaurantTypeId": [
             "2",
             "1"
         ]
+        // Name: Name,
+        // Email:Email,
+        // Password:Password,
+        // PhoneNumber: PhoneNumber,
+        // // CompanyPer: CompanyPer,
+        // CompanyPer:CompanyPer ,
+        // TagLine: TagLine,
+        // ApproximateCostPerPerson: ApproximateCostPerPerson,
+        // CountryId: "1",
+        // CityId: "1",
+      
+        // BusinessId:BusinessId,
+        // RestaurantTagId: [
+        //     "1",
+        //     "3"
+        // ],
+        // RestaurantTypeId: [
+        //     "2",
+        //     "1"
+        // ]
     
     }),
     })
       .then((res) => res.json())
       .then((data) => {
+        data?.ResultMessages?.map((message) => {
+          if(message?.MessageType === 'success') {
+
+            toast.success(message.Message, {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+              });
+              setFeedbackModalOpen(false)
+              GetAllRest()
+          }
+          else if(message?.MessageType === 'danger')
+          {
+            toast.error(message.Message, {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+              });
+          }
+        })
         console.log(data, 'move watching.....')
       })
   }
@@ -418,7 +472,7 @@ function CancelOrders() {
             <div className="mt-8">
               <PaginationNumeric />
             </div>
-
+<ToastContainer/>
           </div>
         </main>
 

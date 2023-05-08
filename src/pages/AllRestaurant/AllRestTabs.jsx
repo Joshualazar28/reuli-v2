@@ -56,7 +56,7 @@ function TabsButton({restaurant, restaurantorder, geRestaurantMenu}) {
   {toggleState === 1 ? <> <About restaurant={restaurant}/> </> : null}
 
   {toggleState === 2 ? <> <Orders restaurantorder={restaurantorder}  selectedItems={handleSelectedItems} title={title} CreateOrderCount={CreateOrderCount}/> </> : null}
-  {toggleState === 3 ? <><Menu geRestaurantMenu={geRestaurantMenu}/></> : null }  
+  {toggleState === 3 ? <><Menu /></> : null }  
   {toggleState === 4 ? <> <Payouts/> </> : null}
   {toggleState === 5 ? <> <Timing/> </> : null}
   

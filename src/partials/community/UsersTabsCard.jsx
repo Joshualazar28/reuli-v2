@@ -4,7 +4,7 @@ import { Link} from 'react-router-dom';
 import EditMenu from '../../components/DropdownEditMenu';
 import moment from 'moment';
 function UsersTabsCard(props) {
-  
+  console.log(props.image)
   return (
     <div className="col-span-full  sm:col-span-6 xl:col-span-3 bg-white shadow-lg rounded-xl border border-slate-200">
       <div className="flex flex-col h-full">
@@ -21,7 +21,7 @@ function UsersTabsCard(props) {
                     <path d="M21 14.077a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 010 1.5 1.5 1.5 0 00-1.5 1.5.75.75 0 01-.75.75zM14 24.077a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 110-2 4 4 0 004-4 1 1 0 012 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1z" />
                   </svg> */}
                 </div>
-                <img className="rounded-full" src={props.Logo} width="85" height="64" alt={props.name} />
+                <img className="rounded-full" src={props.image?props.image:'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg'} width="85" height="64" alt={props.name} />
               {/* </Link> */}
             </div>
             <div className="text-center">

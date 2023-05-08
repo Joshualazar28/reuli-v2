@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Sidebar from '../../partials/SideBar/Sidebar';
 import Header from '../../partials/Header';
 import FilterButton from '../../components/DropdownFilter';
@@ -14,6 +14,7 @@ import AllRiderPage from '../../components/AllRiderPage'
 
 function CancelOrders() {
 
+  
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
   const [feedbackModalOpen, setFeedbackModalOpen] = useState(false)
@@ -21,11 +22,25 @@ function CancelOrders() {
     setSelectedItems([...selectedItems]);
   };
   const [show, setShow] = useState(false);
-
+const [allRider, setallRider] = useState([])
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const  title = "Orders Create"
   const CreateOrderCount  = '76'
+
+  const  getRider = async () =>  {
+    try {
+      const response = await axios.get('https://delivigo-api.herokuapp.com/api/v5/drivers');
+      setallRider(response?.data?.result);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    getRider()
+  }, [])
+  
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -331,7 +346,7 @@ function CancelOrders() {
 
             </div>
 
-              <AllRiderPage/>
+              <AllRiderPage allRider={allRider}/>
            
     
             {/* Table */}

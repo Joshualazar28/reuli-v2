@@ -112,7 +112,7 @@ function RestaurantProfile({restaurant}) {
       </div>
     </div>
 
-    <Reviews/>  
+    {/* <Reviews/>   */}
         </>
     )
 }
